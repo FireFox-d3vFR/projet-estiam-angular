@@ -1,0 +1,25 @@
+<h1>{{ courseName }}</h1>
+
+<button [disabled]="isDisabled">Commencer</button>
+
+<button (click)="startCourse()">Commencer le cours</button>
+
+<input [(ngModel)]="courseDescription" placeholder="Entrez la description">
+<p>{{ courseDescription }}</p>
+
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses">
+    <app-course-item [course]="course"></app-course-item>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses">
+    <app-course-item [course]="course" (courseSelected)="onCourseSelected($event)"></app-course-item>
+  </li>
+</ul>
+
