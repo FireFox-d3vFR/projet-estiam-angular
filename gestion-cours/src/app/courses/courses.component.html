@@ -1,8 +1,4 @@
-<div *ngFor="let course of courses">
-  <h2>{{ course.name }}</h2>
-  <p>{{ course.description }}</p>
-</div>
-
-<form (ngSubmit)="addCourse()">
-  <input [(ngModel)]="newCourse.name" name="name" placeholder="Nom du cours">
-</form>
+<!-- Afficher les cartes -->
+ <div class="courses-container">
+  <app-courses-card *ngFor="let course of courses" [course]="course"></app-courses-card>
+ </div>

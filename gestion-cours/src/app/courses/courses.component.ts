@@ -5,11 +5,13 @@ import { Component } from '@angular/core';
   standalone: false,
 
   templateUrl: './courses.component.html',
-  styleUrl: './courses.component.css'
+  styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent {
-  courses =  [
-    { name: 'Developpement Frontend', description: "Cours de frontend avec l'utilisation de Angular" },
-    { name: 'Developpement Backend', description: "Introduction sur l'utilisation de Next.js"}
-  ]
+  // Liste des cours
+  courses = [
+    { id: 1, title: 'Angular Basics', description: 'Introduction to Angular', duration: '3 hours'},
+    { id: 2, title: 'Advanced Angular', description: 'Deep dive into Angular', duration: '5 hours'},
+    // Ajoutez d'autres cours ici
+  ];
 }
