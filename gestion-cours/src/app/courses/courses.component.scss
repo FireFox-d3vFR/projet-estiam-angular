@@ -3,3 +3,42 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+.course-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #F9F9F9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-form input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.course-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.course-form button:hover {
+  background-color: #0056b3;
+}
+
+.new-course {
+  border: 2px solid green;
+  background-color: #E0FFE0;
+}

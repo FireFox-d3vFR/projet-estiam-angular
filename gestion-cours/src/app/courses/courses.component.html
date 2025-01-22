@@ -1,4 +1,12 @@
+ <!-- Formulaire d'ajout de cours -->
+ <form #courseForm="ngForm" (ngSubmit)="addCourse(courseForm.value, courseForm)" (keydown.enter)="addCourse(courseForm.value, courseForm)" class="course-form">
+  <input type="text" name="name" ngModel placeholder="Nom du cours" required>
+  <input type="text" name="description" ngModel placeholder="Description" required>
+  <input type="number" name="duration" ngModel placeholder="Durée (en heures)" required>
+  <button type="submit">Ajouter le cours</button>
+</form>
+
 <!-- Afficher les cartes -->
  <div class="courses-container">
-  <app-courses-card *ngFor="let course of courses" [course]="course"></app-courses-card>
+  <app-courses-card *ngFor="let course of courses" [class.new-course]="newCourseAdded" [course]="course"></app-courses-card>
  </div>

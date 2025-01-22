@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-courses',
@@ -9,9 +10,19 @@ import { Component } from '@angular/core';
 })
 export class CoursesComponent {
   // Liste des cours
-  courses = [
-    { id: 1, title: 'Angular Basics', description: 'Introduction to Angular', duration: '3 hours'},
-    { id: 2, title: 'Advanced Angular', description: 'Deep dive into Angular', duration: '5 hours'},
-    // Ajoutez d'autres cours ici
-  ];
+  courses: Course[] = [];
+  newCourseAdded = false; // Indicateur pour les nouveaux cours ajoutés
+
+  // Fonction pour ajouter un cours
+  addCourse(course: { name: string, description: string, duration: number }, form: any) {
+    const newCourse: Course = {
+      id: this.courses.length + 1,
+      title: course.name,
+      description: course.description,
+      duration: `${course.duration} hours`
+    };
+    this.courses.push(newCourse);
+    this.newCourseAdded = true; // Mettre à jour l'indicateur
+    form.reset();
+  }
 }
