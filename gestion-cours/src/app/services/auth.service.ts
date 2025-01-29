@@ -20,8 +20,9 @@ export class AuthService {
           const token = this.generateToken();
           localStorage.setItem(this.tokenKey, token);
           return true;
-        }
+        } else {
           return false;
+        }
       })
     );
   }
@@ -44,6 +45,9 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem(this.tokenKey);
+    }
+    return null;
   }
 }

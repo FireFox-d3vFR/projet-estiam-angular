@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": "1",
-      "title": "Angular Fondamentaux",
+      "name": "Angular Fondamentaux",
       "description": "Apprenez les bases d'Angularrrrrr",
       "duration": "20h",
       "image": "assets/images/angular.jpeg",
@@ -10,7 +10,7 @@
     },
     {
       "id": "2",
-      "title": "React Avancé",
+      "name": "React Avancé",
       "description": "Maîtrisez React et Redux",
       "duration": "25h",
       "image": "assets/images/react.jpeg",
@@ -18,7 +18,7 @@
     },
     {
       "id": "1856",
-      "title": "Php Symphony",
+      "name": "Php Symphony",
       "description": "Niveau avancée",
       "duration": "25h",
       "image": "assets/images/php.jpeg",
