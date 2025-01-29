@@ -5,8 +5,8 @@ import { Component, Input } from '@angular/core';
   standalone: false,
 
   templateUrl: './courses-card.component.html',
-  styleUrl: './courses-card.component.scss'
+  styleUrls: ['./courses-card.component.scss']
 })
 export class CoursesCardComponent {
-  @Input() course!: { id: number, title: string, description: string, duration: string };
+  @Input() course!: { id: number, name: string, description: string, duration: string };
 }

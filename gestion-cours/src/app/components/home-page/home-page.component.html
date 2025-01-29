@@ -1,0 +1,12 @@
+<div class="hero">
+  <h1>Bienvenue sur notre plateforme de cours</h1>
+  <p>Découvrez nos cours disponibles et commencez votre apprentissage dès aujourd'hui !</p>
+</div>
+
+<div class="course-list">
+  <div *ngFor="let course of courses" class="course-card">
+    <h3>{{ course.name }}</h3>
+    <p>{{ course.description }}</p>
+    <span>Durée : {{ course.duration }}</span>
+  </div>
+</div>
