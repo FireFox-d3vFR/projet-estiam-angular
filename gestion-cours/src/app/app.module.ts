@@ -22,14 +22,14 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
 @NgModule({
   declarations: [
     AppComponent,
+    HomePageComponent,
     CoursesComponent,
     CoursesCardComponent,
+    CourseDetailComponent,
     NavbarComponent,
     FooterComponent,
     AdminDashboardComponent,
-    CourseDetailComponent,
     AddCoursesComponent,
-    HomePageComponent,
   ],
   imports: [
     BrowserModule,

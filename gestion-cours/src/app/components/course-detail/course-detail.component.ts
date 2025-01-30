@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseModel } from '../../models/course.model';
 import { CourseService } from '../../services/course.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-course-detail',
@@ -15,13 +16,13 @@ export class CourseDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private courseService: CourseService
+    private courseService: CourseService,
   ) {}
 
   ngOnInit(): void {
-      const id = +this.route.snapshot.paramMap.get('id')!;
-      this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
-        this.course = courses.find(course => course.id === id);
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      this.courseService.getCourseById(id).subscribe((course: CourseModel) => {
+        this.course = course;
       });
   }
 }

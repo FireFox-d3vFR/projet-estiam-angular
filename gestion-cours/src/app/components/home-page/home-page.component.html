@@ -4,9 +4,5 @@
 </div>
 
 <div class="course-list">
-  <div *ngFor="let course of courses" class="course-card">
-    <h3>{{ course.name }}</h3>
-    <p>{{ course.description }}</p>
-    <span>Durée : {{ course.duration }}</span>
-  </div>
+  <app-courses-card *ngFor="let course of courses" [course]="course"></app-courses-card>
 </div>
