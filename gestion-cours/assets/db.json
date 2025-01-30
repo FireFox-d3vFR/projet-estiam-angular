@@ -23,6 +23,12 @@
       "duration": "25h",
       "image": "assets/images/php.jpeg",
       "createdAt": "2025-01-27T22:17:10.156Z"
+    },
+    {
+      "id": 4,
+      "name": "Test",
+      "description": "Test",
+      "duration": 1
     }
   ],
   "users": [

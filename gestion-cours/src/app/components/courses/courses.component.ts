@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CourseModel } from '../../models/course.model';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-courses',
@@ -11,21 +12,30 @@ import { CourseModel } from '../../models/course.model';
 export class CoursesComponent {
   // Liste des cours
   courses: CourseModel[] = [];
-  newCourseAdded = false; // Indicateur pour les nouveaux cours ajoutés
+  newCourseAdded: boolean[] = [];
 
-  // Fonction pour ajouter un cours
-  addCourse(
-    course: { name: string; description: string; duration: number },
-    form: any
-  ) {
-    const newCourse: CourseModel = {
-      id: this.courses.length + 1,
-      name: course.name,
-      description: course.description,
-      duration: `${course.duration} hours`,
-    };
-    this.courses.push(newCourse);
-    this.newCourseAdded = true; // Mettre à jour l'indicateur
-    form.reset();
+  constructor(private courseService: CourseService) {}
+
+  ngOnInit(): void {
+    this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
+      this.courses = courses;
+      this.newCourseAdded = new Array(courses.length).fill(false);
+    });
   }
+
+  addCourse(courseData: any, form: any): void {
+    const newCourse: CourseModel = {
+      id: this.courses.length +1,
+      name: courseData.name,
+      description: courseData.description,
+      duration: courseData.duration,
+    };
+
+    this.courseService.addCourse(newCourse).subscribe((course: CourseModel) => {
+      this.courses.push(course);
+      this.newCourseAdded.push(true);
+      form.reset();
+    });
+  }
+
 }

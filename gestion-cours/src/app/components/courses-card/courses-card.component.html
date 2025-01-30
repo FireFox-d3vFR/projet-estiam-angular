@@ -1,6 +1,9 @@
 <!-- Définir l'aspect visuel de chaque cours -->
-<div class="course-card" [routerLink]="['/course', course.id]">
-  <h3>{{ course.name }}</h3>
-  <p>{{ course.description }}</p>
-  <p>Durée : {{ course.duration }}</p>
+<div class="course-card" [ngClass]="{ 'new-courses': isNew }" [routerLink]="['/course', course.id]">
+  <div class="course-content">
+    <h3>{{ course.name }}</h3>
+    <p>{{ course.description }}</p>
+    <p>Durée : {{ course.duration }}</p>
+    <button>Voir les détails</button>
+  </div>
 </div>

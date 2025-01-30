@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CoursesCardComponent {
   @Input() course!: { id: number, name: string, description: string, duration: string };
+  @Input() isNew: boolean = false;
 }

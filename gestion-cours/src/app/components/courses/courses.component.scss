@@ -1,10 +1,22 @@
-.courses-container {
+.courses-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.courses-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.courses-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
-.course-form {
+.courses-form {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -14,7 +26,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.course-form input {
+.courses-form input {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
@@ -23,7 +35,7 @@
   font-size: 16px;
 }
 
-.course-form button {
+.courses-form button {
   width: 100%;
   padding: 10px;
   background-color: #007BFF;
@@ -34,11 +46,11 @@
   cursor: pointer;
 }
 
-.course-form button:hover {
+.courses-form button:hover {
   background-color: #0056b3;
 }
 
-.new-course {
+.new-courses {
   border: 2px solid green;
   background-color: #E0FFE0;
 }

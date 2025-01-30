@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   // { path: '**', redirectTo: '' },
 
-  { path: 'courses', loadChildren: () => import('./components/courses/courses.module').then((m) => m.CoursesModule), },
+  // { path: 'courses', loadChildren: () => import('./components/courses/courses.module').then((m) => m.CoursesModule), },
+  { path: 'courses', component: CoursesComponent },
   { path: 'course/:id', component: CourseDetailComponent },
   { path: 'add-courses', component: AddCoursesComponent, canActivate: [AuthGuard], },
 

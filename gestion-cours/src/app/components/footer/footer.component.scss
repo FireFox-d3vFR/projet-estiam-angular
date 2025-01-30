@@ -1,9 +1,39 @@
 .footer {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 0;
   text-align: center;
-  padding: 10px 0;
-  background-color: #F1F1F1;
-  color: #333;
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-button {
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.github-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: none;
 }
