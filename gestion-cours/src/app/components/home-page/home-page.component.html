@@ -6,5 +6,5 @@
 <h3>Nos derniers cours</h3>
 
 <div class="course-list">
-  <app-courses-card *ngFor="let course of courses" [course]="course"></app-courses-card>
+  <app-courses-card *ngFor="let course of courses" [course]="course" [isNew]="isNewCourse(course.id)"></app-courses-card>
 </div>

@@ -12,15 +12,28 @@ import { CourseService } from '../../services/course.service';
 export class CoursesComponent {
   // Liste des cours
   courses: CourseModel[] = [];
-  newCourseAdded: boolean[] = [];
+  newCourseAdd: number[] = [];
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
+    this.loadCourses();
+    this.loadNewCourseAdd();
+  }
+
+  loadCourses(): void {
     this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
       this.courses = courses;
-      this.newCourseAdded = new Array(courses.length).fill(false);
     });
+  }
+
+  loadNewCourseAdd(): void {
+    if (typeof localStorage !== 'undefined') {
+      const storeAdd = localStorage.getItem('newCourseAdd');
+      if (storeAdd) {
+        this.newCourseAdd = JSON.parse(storeAdd);
+      }
+    }
   }
 
   addCourse(courseData: any, form: any): void {
@@ -29,13 +42,22 @@ export class CoursesComponent {
       name: courseData.name,
       description: courseData.description,
       duration: courseData.duration,
+      createdAt: new Date().toISOString(),
     };
 
     this.courseService.addCourse(newCourse).subscribe((course: CourseModel) => {
       this.courses.push(course);
-      this.newCourseAdded.push(true);
-      form.reset();
+      this.newCourseAdd.push(course.id);
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('newCourseAdd', JSON.stringify(this.newCourseAdd));
+      }
+      form.resetForm();
+      this.loadCourses();
     });
+  }
+
+  isNewCourse(courseId: number): boolean {
+    return this.newCourseAdd.includes(courseId);
   }
 
 }

@@ -11,16 +11,32 @@ import { CourseService } from '../../services/course.service';
 })
 export class HomePageComponent {
   courses: CourseModel[] = [];
+  newCourseAdd: number[] = [];
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.loadCourses();
+    this.loadNewCourseAdd();
   }
 
   loadCourses(): void {
     this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
-      this.courses = courses;
+      // Trier les cours par date de création et prendre les 3 derniers
+      this.courses = courses.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3);
     });
+  }
+
+  loadNewCourseAdd(): void {
+    if (typeof localStorage !== 'undefined') {
+      const storeAdd = localStorage.getItem('newCourseAdd');
+      if (storeAdd) {
+        this.newCourseAdd = JSON.parse(storeAdd);
+      }
+    }
+  }
+
+  isNewCourse(courseId: number): boolean {
+    return this.newCourseAdd.includes(courseId);
   }
 }

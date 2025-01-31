@@ -11,7 +11,7 @@ import { CourseService } from '../../services/course.service';
   styleUrls: ['./add-courses.component.scss']
 })
 export class AddCoursesComponent {
-  newCourse: CourseModel = { id: 0, name: '', description: '', duration: '' };
+  newCourse: CourseModel = { id: 0, name: '', description: '', duration: '' , createdAt: '' };
   successMessage: string | null = null;
 
   constructor(private courseService: CourseService, private router: Router) {}

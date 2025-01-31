@@ -25,10 +25,25 @@
       "createdAt": "2025-01-27T22:17:10.156Z"
     },
     {
-      "id": 4,
+      "id": "4",
+      "name": "Next.js",
+      "description": "Introduction to Next.js (backend)",
+      "duration": "2h",
+      "createdAt": "2025-01-30T22:17:10.156Z"
+    },
+    {
+      "id": "5",
       "name": "Test",
       "description": "Test",
-      "duration": 1
+      "duration": "1h",
+      "createdAt": "2025-01-30T22:17:11.156Z"
+    },
+    {
+      "id": 6,
+      "name": "C++",
+      "description": "Découverte de la Programmation Orienté Objet",
+      "duration": "12h",
+      "createdAt": "2025-01-31T00:32:51.229Z"
     }
   ],
   "users": [

@@ -3,4 +3,5 @@ export interface CourseModel {
   name: string;
   description: string;
   duration: string;
+  createdAt: string;
 }
