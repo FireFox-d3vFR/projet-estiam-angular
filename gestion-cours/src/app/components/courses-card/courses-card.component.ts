@@ -8,6 +8,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./courses-card.component.scss']
 })
 export class CoursesCardComponent {
-  @Input() course!: { id: number, name: string, description: string, duration: string };
+  @Input() course!: { id: number, name: string, description: string, duration: string, image: string };
   @Input() isNew: boolean = false;
+
+  getImagePath(image: string): string {
+    return `assets/images/${image}`;
+  }
 }

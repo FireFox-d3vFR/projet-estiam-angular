@@ -15,9 +15,11 @@ import { AddCoursesComponent } from './components/add-courses/add-courses.compon
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AuthModule } from './auth/auth.module';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
+import { AuthComponent } from './components/auth/auth.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
     FooterComponent,
     AdminDashboardComponent,
     AddCoursesComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
     FormsModule,
     RouterModule,
     CoursesModule,
-    AuthModule,
     HttpClientModule,
   ],
   providers: [
@@ -48,6 +50,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptors';
       useClass: AuthInterceptor,
       multi: true,
     },
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent],
 })

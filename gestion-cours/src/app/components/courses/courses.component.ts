@@ -22,7 +22,7 @@ export class CoursesComponent {
   }
 
   loadCourses(): void {
-    this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
+    this.courseService.getPublishedCourses().subscribe((courses: CourseModel[]) => {
       this.courses = courses;
     });
   }
@@ -43,6 +43,8 @@ export class CoursesComponent {
       description: courseData.description,
       duration: courseData.duration,
       createdAt: new Date().toISOString(),
+      published: false,
+      image: courseData.image
     };
 
     this.courseService.addCourse(newCourse).subscribe((course: CourseModel) => {

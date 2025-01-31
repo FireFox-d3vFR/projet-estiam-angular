@@ -1,9 +1,10 @@
-<!-- Intégrer la barre de navigation -->
- <nav class="navbar">
+<nav class="navbar">
   <div class="logo">Gestion de Cours</div>
   <ul>
     <li><a routerLink="/">Accueil</a></li>
     <li><a routerLink="/courses">Cours</a></li>
-    <li><a routerLink="/admin">Admin</a></li>
+    <li *ngIf="isAdmin"><a routerLink="/admin">Admin</a></li>
+    <li *ngIf="!isLoggedIn"><a routerLink="/auth" class="btn-connexion">Connexion</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="logout()" class="btn-connexion">Déconnexion</a></li>
   </ul>
- </nav>
+</nav>

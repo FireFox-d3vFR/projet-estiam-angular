@@ -7,10 +7,15 @@
   padding: 10px 20px;
 }
 
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 
 .navbar a {
@@ -20,4 +25,18 @@
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+.btn-connexion {
+  background-color: white;
+  color: #007BFF !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none !important;
+  transition: background-color 0.2s;
+}
+
+.btn-connexion:hover {
+  background-color: #333 !important;
+  color: white !important;
 }

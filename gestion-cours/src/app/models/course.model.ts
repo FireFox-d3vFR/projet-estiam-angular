@@ -4,4 +4,6 @@ export interface CourseModel {
   description: string;
   duration: string;
   createdAt: string;
+  published: boolean;
+  image: string;
 }

@@ -1,9 +1,10 @@
 <!-- Définir l'aspect visuel de chaque cours -->
 <div class="course-card" [ngClass]="{ 'new-courses': isNew }" [routerLink]="['/course', course.id]">
   <div class="course-content">
+    <!-- <img [src]="getImagePath(course.image)" alt="{{ course.name }}" class="course-image"> -->
     <h3>{{ course.name }}</h3>
     <p>{{ course.description }}</p>
-    <p>Durée : {{ course.duration }}</p>
+    <p>Durée : {{ course.duration }} heures</p>
     <button>Voir les détails</button>
   </div>
 </div>

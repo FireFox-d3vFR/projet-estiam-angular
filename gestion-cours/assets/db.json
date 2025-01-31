@@ -3,56 +3,64 @@
     {
       "id": "1",
       "name": "Angular Fondamentaux",
-      "description": "Apprenez les bases d'Angularrrrrr",
-      "duration": "20h",
-      "image": "assets/images/angular.jpeg",
-      "createdAt": "2024-01-15"
+      "description": "Apprenez les bases d'Angular",
+      "duration": 20,
+      "image": "assets/images/angular.png",
+      "createdAt": "2024-01-15",
+      "published": true
     },
     {
       "id": "2",
       "name": "React Avancé",
       "description": "Maîtrisez React et Redux",
-      "duration": "25h",
-      "image": "assets/images/react.jpeg",
-      "createdAt": "2024-01-16"
+      "duration": 25,
+      "image": "angular.png",
+      "createdAt": "2024-01-16",
+      "published": false
     },
     {
-      "id": "1856",
-      "name": "Php Symphony",
-      "description": "Niveau avancée",
-      "duration": "25h",
-      "image": "assets/images/php.jpeg",
-      "createdAt": "2025-01-27T22:17:10.156Z"
+      "id": "3",
+      "name": "PowerBi",
+      "description": "Découverte",
+      "duration": 25,
+      "createdAt": "2025-01-31T02:34:06.756Z",
+      "published": false
     },
     {
       "id": "4",
-      "name": "Next.js",
-      "description": "Introduction to Next.js (backend)",
-      "duration": "2h",
-      "createdAt": "2025-01-30T22:17:10.156Z"
+      "name": "C++",
+      "description": "Découverte de la Programmation Orienté Objet",
+      "duration": 34,
+      "createdAt": "2025-01-31T02:44:21.355Z",
+      "published": false
     },
     {
       "id": "5",
-      "name": "Test",
-      "description": "Test",
-      "duration": "1h",
-      "createdAt": "2025-01-30T22:17:11.156Z"
-    },
-    {
-      "id": 6,
-      "name": "C++",
-      "description": "Découverte de la Programmation Orienté Objet",
-      "duration": "12h",
-      "createdAt": "2025-01-31T00:32:51.229Z"
+      "name": "C#",
+      "description": "Suite",
+      "duration": 14,
+      "createdAt": "2025-01-31T03:23:45.555Z",
+      "published": false
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "admin123",
-      "role": "admin",
-      "token": "fake-jwt-token"
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "75f4",
+      "username": "test",
+      "password": "test",
+      "role": "user"
+    },
+    {
+      "id": "5acf",
+      "username": "testadmin",
+      "password": "testadmin",
+      "role": "admin"
     }
   ]
 }

@@ -1,1 +1,53 @@
-<p>admin-dashboard works!</p>
+<div class="admin-dashboard">
+  <h1>Tableau de bord de l'administrateur</h1>
+  <button (click)="toggleAddCourseForm()">Ajouter un nouveau cours</button>
+
+  <div *ngIf="showAddCourseForm" class="add-course-form">
+    <h2>{{ editingCourse ? 'Modifier le cours' : 'Ajouter un nouveau cours' }}</h2>
+    <form #courseForm="ngForm" (ngSubmit)="editingCourse ? updateCourse(courseForm.value) : addCourse(courseForm.value)">
+      <div class="form-group">
+        <label for="name">Nom du cours</label>
+        <input type="text" id="name" name="name" ngModel [ngModel]="editingCourse?.name" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" ngModel [ngModel]="editingCourse?.description" required>
+      </div>
+      <div class="form-group">
+        <label for="duration">Durée (en heures)</label>
+        <input type="number" id="duration" name="duration" ngModel [ngModel]="editingCourse?.duration" required>
+      </div>
+      <div class="form-group" *ngIf="editingCourse">
+        <label for="published">Publication</label>
+        <input type="checkbox" id="published" name="published" ngModel [ngModel]="editingCourse?.published">
+      </div>
+      <button type="submit">{{ editingCourse ? 'Mettre à jour' : 'Ajouter' }}</button>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Date de création</th>
+        <th>Publication</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <td>{{ course.id }}</td>
+        <td>{{ course.name }}</td>
+        <td>{{ course.createdAt | date }}</td>
+        <td>
+          <input type="checkbox" [checked]="course.published" (change)="togglePublication(course)">
+        </td>
+        <td class="actions">
+          <button (click)="editCourse(course.id)">Modifier</button>
+          <button (click)="deleteCourse(course.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

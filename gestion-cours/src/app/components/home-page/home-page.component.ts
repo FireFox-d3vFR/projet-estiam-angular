@@ -21,8 +21,7 @@ export class HomePageComponent {
   }
 
   loadCourses(): void {
-    this.courseService.getCourses().subscribe((courses: CourseModel[]) => {
-      // Trier les cours par date de création et prendre les 3 derniers
+    this.courseService.getPublishedCourses().subscribe((courses: CourseModel[]) => {
       this.courses = courses.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 3);
     });
   }

@@ -1,0 +1,38 @@
+<div class="auth-container">
+  <h2 *ngIf="!showRegisterForm">Connexion</h2>
+  <h2 *ngIf="showRegisterForm">Créer un compte</h2>
+
+  <form *ngIf="!showRegisterForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit">Se connecter</button>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+
+  <form *ngIf="showRegisterForm" (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="isAdmin">Admin</label>
+      <input type="checkbox" id="isAdmin" [(ngModel)]="isAdmin" name="isAdmin">
+    </div>
+    <button type="submit">Créer un compte</button>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+
+  <button (click)="toggleRegisterForm()">
+    {{ showRegisterForm ? 'Retour à la connexion' : 'Créer un compte' }}
+  </button>
+</div>
