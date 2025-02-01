@@ -16,7 +16,7 @@
       "duration": 25,
       "image": "angular.png",
       "createdAt": "2024-01-16",
-      "published": false
+      "published": true
     },
     {
       "id": "3",
@@ -32,7 +32,7 @@
       "description": "Découverte de la Programmation Orienté Objet",
       "duration": 34,
       "createdAt": "2025-01-31T02:44:21.355Z",
-      "published": false
+      "published": true
     },
     {
       "id": "5",
@@ -40,7 +40,7 @@
       "description": "Suite",
       "duration": 14,
       "createdAt": "2025-01-31T03:23:45.555Z",
-      "published": false
+      "published": true
     }
   ],
   "users": [
